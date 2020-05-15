@@ -36,7 +36,7 @@ impl VersionOpt {
 
         let (mut changed_p, mut unchanged_p) =
             self.change
-                .get_changed_pkgs(metadata, &change_data.since, false)?;
+                .get_changed_pkgs(metadata, &change_data.since, true)?;
 
         if changed_p.is_empty() {
             TERM_ERR.write_line("No changes detected, skipping versioning")?;
